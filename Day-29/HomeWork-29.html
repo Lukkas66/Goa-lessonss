@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>სარეგისტრაციო ფორმა</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>სარეგისტრაციო ფორმა</h2>
+    <form action="#" method="post">
+        <div>
+            <label for="email">ემაილი:</label>
+            <input type="email" id="email" name="email" value="" required>
+        </div>
+        <div>
+            <label for="password">პაროლი:</label>
+            <input type="password" id="password" name="password" value="" required>
+        </div>
+        <div>
+            <label for="firstName">სახელი:</label>
+            <input type="text" id="firstName" name="firstName" value="" required>
+        </div>
+        <div>
+            <label for="lastName">გვარი:</label>
+            <input type="text" id="lastName" name="lastName" value="" required>
+        </div>
+        <div>
+            <label for="phone">ტელეფონის ნომერი:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 599-02-21-25" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

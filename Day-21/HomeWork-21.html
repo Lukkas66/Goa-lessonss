@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .buttons a {
+      text-decoration: none;
+    }
+    .button {
+      display: inline-block;
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 18px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+    .content {
+      display: none;
+    }
+    .visible {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Main Page</h1>
+
+<div class="container">
+  <div class="buttons">
+    <a href="#" class="button" onclick="showContent('aboutMe')">About Me</a>
+    <a href="#" class="button" onclick="showContent('goa')">GOA</a>
+    <a href="https://www.youtube.com/@Goal_Oriented_Academy__GOA" target="_blank" class="button">Youtube</a>
+    <a href="https://www.facebook.com/Tzcn66" target="_blank" class="button">Facebook</a>
+  </div>
+  
+  <div id="aboutMe" class="content">
+    <h2>About Me</h2>
+    <p>My name is Luka and I am student, I work hard to get Knowledge</p>
+  </div>
+  
+  <div id="goa" class="content">
+    <h2>About GOA</h2>
+    <p>Goa is an Academy that gives you not only Knowledge also it gives friends,happines and evrything you need in your future life.</p>
+  </div>
+</div>
+
+<script>
+  function showContent(id) {
+    // Hide all content divs
+    var contents = document.querySelectorAll('.content');
+    contents.forEach(function(content) {
+      content.style.display = 'none';
+    });
+
+    // Show the selected content div
+    var selectedContent = document.getElementById(id);
+    selectedContent.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

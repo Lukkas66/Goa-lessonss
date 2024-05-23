@@ -1,0 +1,1 @@
+print("Luka, Nita, Tamuna, Bakuri")
