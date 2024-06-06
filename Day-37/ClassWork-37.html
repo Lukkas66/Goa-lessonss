@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassWork-37</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            background: #f4f4f4;    
+        }
+
+        header {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background: #ecf0f1;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-section {
+            height: 100vh;
+            background: url("image/abstract-luxury-background-design-for-wallpaper-or-web-background-vector.jpg") no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #c0392b;
+        }
+
+        .gallery-section, .about-section, .contact-section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .gallery-section h2, .about-section h2, .contact-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 36px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .gallery-item {
+            flex: 1;
+            margin: 10px;
+            max-width: calc(33.333% - 20px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .gallery-item h3 {
+            color: #3498db;
+        }
+
+        .about-section p {
+            text-align: center;
+            line-height: 1.7;
+            color: #2c3e50;
+        }
+
+        .contact-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-section input, .contact-section textarea {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-section button {
+            padding: 10px 20px;
+            background: #2c3e50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .contact-section button:hover {
+            background: #34495e;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer .social-links a {
+            color: #ecf0f1;
+            margin: 0 10px;
+            font-size: 20px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-links a:hover {
+            color: #e74c3c;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background: #2c3e50;
+                width: 100%;
+                display: none;
+            }
+
+            .nav-links li {
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .burger {
+                display: block;
+            }
+
+            .nav-active {
+                display: flex;
+            }
+
+            .toggle .line1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .toggle .line2 {
+                opacity: 0;
+            }
+
+            .toggle .line3 {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Luxury Cars</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+    <section id="home" class="hero-section">
+        <div class="hero-text">
+            <h1>Welcome to Luxury Car Shop</h1>
+            <p>Luxury cars  of WorlWide </p>
+            <a href="#gallery" class="btn">Explore Gallery</a>
+        </div>
+    </section>
+    <section id="gallery" class="gallery-section">
+        <h2>Car Gallery</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="image/2021-targa4s.jpg" alt="Car 1">
+                <h3>Porsche targa</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="image/bmw-4-series-coupe-m-automobiles-sd-individual-01.jpg" alt="Car 2">
+                <h3>BMW M4</h3>
+            </div>
+            <div class="gallery-item">
+                <img src="image/1-Mercedes-G-Class-review.jpg" alt="Car 3">
+                <h3>Mercedes G-Class</h3>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>   About Us
+
+            Welcome to Luxryu Cars Shop, your premier destination for luxury and performance vehicles. At Luxryu, we pride ourselves on offering an exclusive selection of the world's finest automobiles, meticulously curated to meet the desires of discerning customers.
+            
+                Our Vision
+            
+            At Luxryu Cars Shop, we aim to redefine the concept of luxury in the automotive world. We believe that purchasing a car should be an unforgettable journey, filled with excitement and satisfaction. Our mission is to provide an exceptional experience from the moment you enter our showroom to the moment you drive away in your dream car.
+            
+             Our Collection
+            
+            Our showroom boasts a diverse range of high-end vehicles, from timeless classics to the latest models. Each car in our collection is selected for its superior craftsmanship, advanced technology, and impeccable design. Whether you are looking for a sleek sports car, a sophisticated sedan, or a powerful SUV, Luxryu Cars Shop has the perfect vehicle to match your style and needs.
+            
+             Exceptional Service
+            
+            We understand that luxury is not just about the cars we sell, but also about the service we provide. Our team of knowledgeable and passionate professionals is dedicated to offering personalized service, ensuring that every detail is taken care of. From customizations and financing options to after-sales support, we are here to make your car buying experience seamless and enjoyable.
+            
+            Our Promise
+            
+            At Luxryu Cars Shop, we are committed to maintaining the highest standards of quality and integrity. We strive to build lasting relationships with our clients by providing honest advice, transparent transactions, and ongoing support. Your satisfaction is our top priority.
+            
+            Thank you for choosing Luxryu Cars Shop. We invite you to visit our showroom and discover the epitome of luxury and performance. Let us help you find the car of your dreams.</p>
+    </section>
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; 2024 Cars. All rights reserved.</p>
+    </footer>
+    <script>
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+        });
+    </script>
+</body>
+</html>
+
