@@ -1,0 +1,1 @@
+print = ("gavakete kvela codewars")

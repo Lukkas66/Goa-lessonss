@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Multi-Page Website</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            margin: 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            color: white;
+            padding: 15px 20px;
+            display: block;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        header {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #4CAF50, #2196F3);
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header-home {
+            background: linear-gradient(135deg, #4CAF50, #2196F3);
+        }
+        .header-about {
+            background: linear-gradient(135deg, #2196F3, #FF9800);
+        }
+        .header-contact {
+            background: linear-gradient(135deg, #FF9800, #f44336);
+        }
+        main {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .text-home, .text-about, .text-contact {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .text-home {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .text-about {
+            color: #2196F3;
+            font-style: italic;
+        }
+        .text-contact {
+            color: #f44336;
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #333;
+            color: white;
+            position: relative;
+            bottom: 100%;
+            width: 100%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .footer-home, .footer-about, .footer-contact {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Page -->
+    <div id="home">
+        <header class="header-home">Welcome to My Stylish Website</header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <main>
+            <p class="text-home">This is the home page. Enjoy your stay!</p>
+        </main>
+        <footer class="footer-home">© 2024 My Stylish Website</footer>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" style="display:none;">
+        <header class="header-about">About Us</header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <main>
+            <p class="text-about">Learn more about what we do and our mission.</p>
+        </main>
+        <footer class="footer-about">© 2024 My Stylish Website</footer>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" style="display:none;">
+        <header class="header-contact">Contact Us</header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <main>
+            <p class="text-contact">Feel free to reach out through any of the methods listed below.</p>
+        </main>
+        <footer class="footer-contact">© 2024 My Stylish Website</footer>
+    </div>
+
+    <script>
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('div[id]').forEach(div => {
+                    div.style.display = 'none';
+                });
+                const target = this.getAttribute('href').substring(1);
+                document.getElementById(target).style.display = 'block';
+            });
+        });
+
+        // Default to showing the home page
+        document.getElementById('home').style.display = 'block';
+    </script>
+</body>
+</html>

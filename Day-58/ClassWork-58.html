@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: grid;
+            grid-template-areas: 
+                "header header header"
+                "sidebar content1 content1"
+                "sidebar content2 content3"
+                "footer footer footer";
+            grid-template-columns: 1fr 2fr 2fr;
+            grid-template-rows: auto;
+            gap: 10px;
+            height: 100vh;
+        }
+        .header {
+            grid-area: header;
+            background-color: #8A2BE2;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #20B2AA;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content1 {
+            grid-area: content1;
+            background-color: #4682B4;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content2 {
+            grid-area: content2;
+            background-color: #4682B4;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content3 {
+            grid-area: content3;
+            background-color: #4682B4;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .footer {
+            grid-area: footer;
+            background-color: #8A2BE2;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="content1">Content-1</div>
+        <div class="content2">Content-2</div>
+        <div class="content3">Content-3</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>

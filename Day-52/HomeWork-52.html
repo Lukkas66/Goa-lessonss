@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook - Log In </title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+        .login-container, .home-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .login-header h1 {
+            color: #1877f2;
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+        }
+        .login-form, .home-content {
+            width: 360px;
+            padding: 40px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 6px;
+            background-color: #1877f2;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+        .login-form button:hover {
+            background-color: #155aab;
+        }
+        .home-header {
+            background-color: #1877f2;
+            width: 100%;
+            padding: 10px 0;
+            color: white;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        .home-content {
+            margin-top: 20px;
+            width: 60%;
+        }
+        .post {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .post h2 {
+            margin: 0 0 10px 0;
+        }
+        .post p {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            color: white;
+            padding: 15px 20px;
+            display: block;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="login">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>facebook</h1>
+            </div>
+            <div class="login-form">
+                <form onsubmit="showHomePage(); return false;">
+                    <input type="text" placeholder="Email or Phone" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Log In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Home Page -->
+    <div id="home" style="display:none;">
+        <div class="home-container">
+            <div class="home-header">facebook</div>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showHomePage()">Home</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Messages</a></li>
+                </ul>
+            </nav>
+            <div class="home-content">
+                <div class="post">
+                    <h2>Welcome to Facebook</h2>
+                    <p>This is a sample post content to resemble a Facebook post.</p>
+                </div>
+                <div class="post">
+                    <h2>Another Post</h2>
+                    <p>Here's some more content for another post.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showHomePage() {
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('home').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
