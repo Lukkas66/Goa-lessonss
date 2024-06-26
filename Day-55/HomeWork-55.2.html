@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        body {
+            background-color: #1d1d1d;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+
+        .card {
+            background-color: #262626;
+            border-radius: 20px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .title {
+            color: #b5a5ff;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .name {
+            font-size: 24px;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .description a {
+            color: #b5a5ff;
+            text-decoration: none;
+        }
+
+        .email-btn {
+            background: linear-gradient(to right, #ff8a00, #e52e71);
+            border: none;
+            border-radius: 20px;
+            color: white;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-size: 12px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .social-icons { 
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: #888;
+            font-size: 20px;
+            text-decoration: none;
+        }
+    </style>
+</head> 
+<body>
+    <div class="card">
+        <img src="/luka.jpg" alt="Profile Image" class="profile-img">
+        <div class="title">ASTRAL PROJECTOR</div>
+        <div class="name">Bobby Newmark</div>
+        <div class="description">
+            Felis eget velit sed lorem sagittis tempus sed amet purus nisl 
+            <a href="#">nunc mattis</a>.
+        </div>
+        <button class="email-btn">Email</button>
+        <div class="social-icons">
+            <a href="#">&#x2716;</a>
+            <a href="#">&#xf09b;</a>
+            <a href="#">&#xf16d;</a>
+            <a href="#">&#xf09a;</a>
+            <a href="#">&#xf003;</a>
+        </div>
+    </div>
+</body>
+</html>
